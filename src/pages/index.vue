@@ -22,7 +22,7 @@ function newGame(difficulty: 'easy' | 'medium' | 'hard') {
       play.reset(9, 9, 10)
       break
     case 'medium':
-      play.reset(16, 16, 80)
+      play.reset(16, 16, 40)
       break
     case 'hard':
       play.reset(16, 30, 99)
@@ -40,9 +40,6 @@ watchEffect(() => {
     Minesweeper
 
     <div flex="~ gap1" justify-center p4>
-      <button btn @click="play.reset()">
-        New Game
-      </button>
       <button btn @click="newGame('easy')">
         Easy
       </button>
@@ -81,7 +78,9 @@ watchEffect(() => {
         />
       </div>
     </div>
-
+    <button btn @click="play.reset()">
+      New Game
+    </button>
     <!-- <div flex="~ gap-1" justify-center>
       <button btn @click="toggleDev()">
         {{ isDev ? 'DEV' : 'NORMAL' }}
